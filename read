@@ -1,0 +1,19 @@
+helm install prometheus ./prometheus-operator/  -n kube-system \
+--set defaultRules.create=false \
+--set global.rbac.create=true \
+--set global.rbac.pspEnabled=true \
+--set kubeApiServer.enabled=true \
+--set kubelet.enabled=true \
+--set coreDNS.enabled=true \
+--set kubeStateMetrics.enabled=true \
+--set kube-state-metrics.rbac.create=true \
+--set kube-state-metrics.podSecurityPolicy.enabled=true \
+--set nodeExporter.enabled=true \
+--set prometheusOperator.enabled=true \
+--set prometheusOperator.admissionWebhooks.enabled=true \
+--set prometheusOperator.manageCrds=true  \
+--set prometheus.enabled=true \
+--set grafana.enabled=true \
+--set defaultRules.create=true \
+--set alertmanager.enabled=true 
+
